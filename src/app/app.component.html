@@ -12,10 +12,15 @@
     </div>
   </div>
 
+  <!--Use logItem.length-->
+  <!--[ngStyle]="{backgroundColor: logItem >= 5 ? 'blue': 'transparent'}"-->
+  <!--[ngClass]="{whiteText: logItem >= 5}"-->
+
+  <!--Use index-->
   <div class="row"
-       *ngFor="let logItem of log"
-       [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue': 'transparent'}"
-       [ngClass]="{'white-text': logItem >= 5}"
+       *ngFor="let logItem of log; let i = index"
+       [ngStyle]="{backgroundColor: i >= 4 ? 'blue': 'transparent'}"
+       [ngClass]="{whiteText: i >= 4}"
   >
     <div class="col-xs-3">
       {{ logItem }}
