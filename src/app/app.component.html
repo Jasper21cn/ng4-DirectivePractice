@@ -1,15 +1,35 @@
 <div class="container">
-
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <button
         class="btn btn-primary"
         (click)="onDisplayContent()"
       >Display Details</button>
     </div>
-    <div class="col-md-3" *ngIf="showContent">
-      <span appColorChange>Basic attribute directive used here.</span><br>
-      <span appBetterColorChange>I'm the better approach!</span>
+    <div class="col-md-5">
+      <div class="alert alert-info" appColorChange>Basic attribute directive used here.</div>
+      <div class="alert alert-success" appBetterColorChange>I'm the better approach!</div>
+      <div class="alert alert-info" appMyHoverDirective>Move mouse over me!</div>
+      <div
+        class="alert alert-danger"
+        appMyHoverDirective2
+        [defaultBackgroundColor]="'transparent'"
+        [mouseOverBackgroundColor]="'lightblue'"
+      >Bind to directive property with @Hostbinding</div>
+    </div>
+    <div class="col-md-3" [ngSwitch]="value">
+      <p *ngSwitchCase="5">value is 5</p>
+      <p *ngSwitchCase="10">value is 10</p>
+      <p *ngSwitchCase="100">value is 100</p>
+      <p *ngSwitchDefault>value is default</p>
+    </div>
+  </div>
+  <div class="row">
+    <!--<div class="col-md-3" *ngIf="showContent">-->
+      <!--This is a great day!-->
+    <!--</div>-->
+    <div class="col-md-3" *appMyCustomStructualDirective="!showContent">
+      This is a great day!
     </div>
   </div>
 

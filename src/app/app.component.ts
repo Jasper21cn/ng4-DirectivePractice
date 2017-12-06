@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   showContent = false;
   log = [];
+  value = 2;
 
   onDisplayContent() {
     this.showContent = !this.showContent;
